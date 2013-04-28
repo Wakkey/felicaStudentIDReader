@@ -26,13 +26,14 @@ __published:	// IDE で管理されるコンポーネント
 	TButton *Button1;
 	TButton *Button2;
 	TEdit *Edit1;
+	TLabel *Label3;
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
-	void __fastcall RadioGroup1Click(TObject *Sender);
 private:	// ユーザー宣言
+  void writedate(int);
 public:		// ユーザー宣言
 	__fastcall TForm1(TComponent* Owner);
 };

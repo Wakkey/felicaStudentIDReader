@@ -29,8 +29,20 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 312
-    Top = 35
+    Left = 318
+    Top = 24
+    Width = 20
+    Height = 77
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -64
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 107
     Width = 20
     Height = 77
     Font.Charset = DEFAULT_CHARSET
@@ -42,9 +54,9 @@ object Form1: TForm1
   end
   object StringGrid1: TStringGrid
     Left = 0
-    Top = 118
+    Top = 200
     Width = 652
-    Height = 301
+    Height = 219
     Align = alBottom
     ColCount = 7
     RowCount = 1
@@ -81,6 +93,7 @@ object Form1: TForm1
     Visible = False
   end
   object Timer1: TTimer
+    Interval = 500
     OnTimer = Timer1Timer
     Left = 507
     Top = 8

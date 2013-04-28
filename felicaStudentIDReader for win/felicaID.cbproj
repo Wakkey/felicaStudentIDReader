@@ -37,14 +37,14 @@
 		<PropertyGroup Condition="'$(Base)'!=''">
 			<_TCHARMapping>wchar_t</_TCHARMapping>
 			<ProjectType>CppVCLApplication</ProjectType>
-			<ILINK_LibraryPath>..\FelicaReader\felicalib\;..\..\..\Desktop\felica学生証\FelicaReader\felicalib\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>..\..\felicalib\;felicalib-0.4.2\;E:\felica\felicalib-0.4.2\src\lib\;..\FelicaReader\felicalib\;..\..\..\Desktop\felica学生証\FelicaReader\felicalib\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<PackageImports>dbexpress;bindcompfmx;fmx;dsnap;rtl;dbrtl;fmxase;IndyCore;bindcomp;IndySystem;DBXInterBaseDriver;fmxobj;xmlrtl;DbxCommonDriver;fmxdae;IndyProtocols;dbxcds;bindengine;IPIndyImpl;$(PackageImports)</PackageImports>
 			<Multithreaded>true</Multithreaded>
 			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
 			<AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
 			<Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
 			<UsingDelphiRTL>true</UsingDelphiRTL>
-			<IncludePath>..\FelicaReader\felicalib\;..\..\..\Desktop\felica学生証\FelicaReader\felicalib\;$(IncludePath)</IncludePath>
+			<IncludePath>..\..\felicalib\;felicalib-0.4.2\;E:\felica\felicalib-0.4.2\src\lib\;..\FelicaReader\felicalib\;..\..\..\Desktop\felica学生証\FelicaReader\felicalib\;$(IncludePath)</IncludePath>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<DynamicRTL>true</DynamicRTL>
 			<UsePackages>true</UsePackages>
@@ -83,17 +83,29 @@
 			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
 			<UsePackages>false</UsePackages>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 			<DynamicRTL>false</DynamicRTL>
-			<LinkPackageImports>rtl.bpi;vcl.bpi</LinkPackageImports>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<Defines>NDEBUG;$(Defines)</Defines>
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
+			<None Include="..\..\felicalib\felicaint.h">
+				<BuildOrder>3</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\felicalib\felicalib.c">
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\felicalib\felicalib.h">
+				<BuildOrder>4</BuildOrder>
+			</None>
+			<None Include="..\..\felicalib\resource.h">
+				<BuildOrder>5</BuildOrder>
+			</None>
 			<CppCompile Include="felicaID.cpp">
 				<BuildOrder>0</BuildOrder>
 			</CppCompile>
@@ -102,9 +114,6 @@
 				<FormType>dfm</FormType>
 				<DependentOn>Unit1.h</DependentOn>
 				<BuildOrder>1</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\FelicaReader\felicalib\felicalib.c">
-				<BuildOrder>2</BuildOrder>
 			</CppCompile>
 			<FormResources Include="Unit1.dfm"/>
 			<BuildConfiguration Include="Release">

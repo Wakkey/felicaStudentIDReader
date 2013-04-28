@@ -54,16 +54,18 @@ __declspec(dllexport) char* __stdcall ReadStudentID(){
 	return str;
 }
 
-
-
-
-
-
-
-
-
-
-
+void TForm1::writedate(int i){
+  TDateTime date = Date();
+  TDateTime time = Time();
+  String s1,s2;
+  s1 = DateTimeToStr(date);
+  s2 = time.TimeString();
+  Form1->StringGrid1->Cells[0][i] = i;
+  Form1->StringGrid1->Cells[4][i] = s1;
+  Form1->StringGrid1->Cells[5][i] = s2;
+  MessageBeep(sounds[5].value);
+  Button1Click(Form1->Button1);
+}
 
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
@@ -71,8 +73,8 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
    TStringList *alist;
    alist = new TStringList;
    alist->Clear();
-   String s,s1,s2;
-   int i,i1,i2;
+   String s,s1,s2,s3;
+   int i,i1,i2,i3;
    bool sw = false;
    s1 = "abcdefghijklmnopqrstuwxyz1234567890";
    s = ret;
@@ -83,64 +85,38 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	   }
 	 }
    }
-   Form1->Label2->Caption = s;
+	Form1->Label2->Caption = s;
+	i3 = Form1->StringGrid1->Cols[2]->IndexOf( s );
+	if ( -1 != i3 ) {
+	  s3 = Form1->StringGrid1->Cells[3][i3];
+	} else {
 
-   if ( Form1->Label2->Caption == "" ) {
-
-   } else
-   {
-	 if (sw == true) {
-
+	  Form1->Label3->Caption = s3;
+	}
+   if (sw == true) {
 
 	 s = Form1->Label2->Caption;
 	 if (7== s.Length()){
+
+	   s3 = "–¢“o˜^‚Å‚·";
 	   i1 = Form1->StringGrid1->Cols[2]->IndexOf(s);
 	   if ( -1 == i1 ) {
-		 //Form1->ListBox1->Items->Add(Form1->Label2->Caption);
-		 //alist->Add(Form1->Label2->Caption);
 		 Form1->StringGrid1->RowCount = Form1->StringGrid1->RowCount + 1;
 		 i = Form1->StringGrid1->RowCount -1;
-		 //if (Form1->RadioGroup1->ItemIndex == 0 ) {
-		   Form1->StringGrid1->Cells[2][i] = Form1->Label2->Caption;
+		 Form1->StringGrid1->Cells[2][i] = Form1->Label2->Caption;
+         Form1->StringGrid1->Cells[1][i] = "–¢—šCoÈ";
+		 writedate(i);
 
-		   TDateTime date = Date();
-		   TDateTime time = Time();
-		   String s,s1;
-		   s1 = DateTimeToStr(date);
-		   s2 = time.TimeString();
-
-		   Form1->StringGrid1->Cells[0][i] = i;
-		   Form1->StringGrid1->Cells[1][i] = "–¢—šCoÈ";
-		   Form1->StringGrid1->Cells[4][i] = s1;//s[1] +s[2] +s[3] +s[4] +s[5] +s[6] +s[7] +s[8] +s[9] +s[10];
-		   Form1->StringGrid1->Cells[5][i] = s2;//s[11] +s[12] +s[13] +s[14] +s[15] +s[16] +s[17] +s[18];
-
-		   //Form1->ListBox2->Items->Add(s);
-		   MessageBeep(sounds[5].value);
-		   Button1Click(Sender);
-		 //}
+		 Form1->Label3->Caption =  s3;
 	   } else {
-		 //if (Form1->RadioGroup1->ItemIndex == 1 ) {
-		   //Form1->StringGrid1->Cells[2][i] = Form1->Label2->Caption;
+		 Form1->StringGrid1->Cells[1][i] = "oÈ";
+		 writedate(i);
 
-		   TDateTime date = Date();
-		   TDateTime time = Time();
-		   String s,s1;
-		   s1 = DateTimeToStr(date);
-		   s2 = time.TimeString();
-
-		   //Form1->StringGrid1->Cells[0][i] = i;
-		   Form1->StringGrid1->Cells[1][i] = "oÈ";
-		   Form1->StringGrid1->Cells[4][i] = s1;//s[1] +s[2] +s[3] +s[4] +s[5] +s[6] +s[7] +s[8] +s[9] +s[10];
-		   Form1->StringGrid1->Cells[5][i] = s2;//s[11] +s[12] +s[13] +s[14] +s[15] +s[16] +s[17] +s[18];
-
-		   //Form1->ListBox2->Items->Add(s);
-		   MessageBeep(sounds[5].value);
-		   Button1Click(Sender);
-		 }
+		 //alist“ñ‚Â‚Å’u‚«Š·‚¦‚é
+		 Form1->Label3->Caption = s3;
 	   }
 	 }
-   //}
-}
+   }
 
 
 }
@@ -176,23 +152,21 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
    TMemo* amemo = new TMemo(this);
    amemo->Parent = Form1->Button1;
    amemo->Visible = false;
-   //TImage* image = new TImage(this);
-   //amemo = new TMemo;
-   //TDateTime time = Now();
-
    amemo->Lines->Clear();
-   for (int i=0; i < Form1->StringGrid1->RowCount; i++) {
-	 //s = alist->Strings[i];
-	 //s1 = Form1->ListBox2->Items->Strings[i];
-	 //alist->Add(s + "," + s1);
-	 //Form1->Caption = s + s1;
-	 //alist->Add(Form1->StringGrid1->Rows[i]->Text);
-	 Caption = Form1->StringGrid1->Rows[i]->CommaText;
-	 amemo->Lines->Add(Form1->StringGrid1->Rows[i]->CommaText);
+
+   int i1;
+   String s;
+
+   i1 = Form1->StringGrid1->RowCount;
+
+   for (int i=0; i < i1; i++) {
+	 //Caption = Form1->StringGrid1->Rows[i]->CommaText;
+	 s = Form1->StringGrid1->Rows[i]->CommaText;
+	 amemo->Lines->Add( s );
    }
-   //alist->SaveToFile(ExtractFilePath( ParamStr(0) ) + "oÈ.csv");
-   //Form1->StringGrid1->Rows[1]->SaveToFile(ExtractFilePath( ParamStr(0) ) + "oÈ.csv");
+
    Button2Click(Sender);
+
    amemo->Lines->SaveToFile(ExtractFilePath( ParamStr(0) ) + "oÈ" + Edit1->Text + ".csv");
    amemo->Free();
 }
@@ -201,9 +175,6 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
   TDateTime date = Now();
-  //2013/04/26
-  //2013_04/26
-  //2:47:53
   String s,s1,s2;
   String c = L"_";
   s = date.DateString();
@@ -211,38 +182,10 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
   s2 = MinuteOf(date);
   s[5] = c[1];
   s[8] = c[1];
-  Form1->Edit1->Text = s + c + s1 + c + s2;
+  Form1->Edit1->Text = s + c + s1;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::RadioGroup1Click(TObject *Sender)
-{
-  /*TMemo *amemo;
-  amemo = new TMemo(this);
-  amemo->Parent = Form1;
-  amemo->Visible = false;
-  amemo->Lines->Clear();
 
-  if ( Form1->RadioGroup1->ItemIndex == 0 )	{
-	  Form1->StringGrid1->ColCount = 6;
-	  amemo->Lines->LoadFromFile(ExtractFilePath( ParamStr(0) ) + "–¼•ë.csv");
-	  for (int i=0; i < amemo->Lines->Count-1; i++ ){
-		Form1->StringGrid1->Rows[i]->CommaText = amemo->Lines[i].Text;
-		Form1->StringGrid1->RowCount = Form1->StringGrid1->RowCount + 1;
-	  }
-  } else {
-	  if ( Edit2->Text != "" ) {
-		Button2Click(Sender);
-		Edit2->Text = Edit1->Text;
-	  }
-	  Form1->StringGrid1->ColCount = 5;
-	  amemo->Lines->LoadFromFile(ExtractFilePath( ParamStr(0) ) + Edit2->Text + ".csv");
-	  for (int i=0; i < amemo->Lines->Count-1; i++ ){
-		Form1->StringGrid1->Rows[i]->CommaText = amemo->Lines[i].Text;
-		Form1->StringGrid1->RowCount = Form1->StringGrid1->RowCount + 1;
-	  }
-	}
-  amemo->Free(); */
-}
-//---------------------------------------------------------------------------
+
 

@@ -5,9 +5,29 @@
     <Transaction>2013/04/21 07:41:08.000.048,=C:\Users\Yuhi\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2013/04/24 01:16:36.000.605,=C:\Users\Yuhi\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2013/04/24 01:18:27.000.370,=C:\Users\Yuhi\Desktop\felica学生証\FelicaReader\felicalib\felicalib.c</Transaction>
+    <Transaction>2013/04/24 01:23:00.000.235,C:\Users\Yuhi\Desktop\felica学生証\felicaID\Unit1.h=C:\Users\Yuhi\Documents\RAD Studio\Projects\Unit1.h</Transaction>
     <Transaction>2013/04/24 01:23:00.000.235,C:\Users\Yuhi\Desktop\felica学生証\felicaID\Unit1.dfm=C:\Users\Yuhi\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2013/04/24 01:23:00.000.235,C:\Users\Yuhi\Desktop\felica学生証\felicaID\Unit1.cpp=C:\Users\Yuhi\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2013/04/24 01:23:00.000.235,C:\Users\Yuhi\Desktop\felica学生証\felicaID\Unit1.h=C:\Users\Yuhi\Documents\RAD Studio\Projects\Unit1.h</Transaction>
     <Transaction>2013/04/24 01:23:08.000.225,C:\Users\Yuhi\Desktop\felica学生証\felicaID\felicaID.cbproj=C:\Users\Yuhi\Documents\RAD Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2013/04/27 21:02:53.000.037,=E:\felica\felicalib-0.4.2\src\lib\felicalib.c</Transaction>
+    <Transaction>2013/04/27 21:03:42.000.015,=E:\felica\felicalib-0.4.2\src\lib\felicaint.h</Transaction>
+    <Transaction>2013/04/27 21:04:06.000.415,=E:\felica\felicalib-0.4.2\src\lib\resource.h</Transaction>
+    <Transaction>2013/04/27 21:08:09.000.973,E:\felica\felicalib-0.4.2\src\lib\felicaint.h=</Transaction>
+    <Transaction>2013/04/27 21:08:09.000.988,E:\felica\felicalib-0.4.2\src\lib\felicalib.c=</Transaction>
+    <Transaction>2013/04/27 21:08:09.000.974,E:\felica\felicalib-0.4.2\src\lib\resource.h=</Transaction>
+    <Transaction>2013/04/27 21:08:35.000.828,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\felicalib-0.4.2\resource.h</Transaction>
+    <Transaction>2013/04/27 21:08:35.000.824,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\felicalib-0.4.2\felicaint.h</Transaction>
+    <Transaction>2013/04/27 21:09:59.000.775,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\resource.h</Transaction>
+    <Transaction>2013/04/27 21:09:59.000.771,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\felicaint.h</Transaction>
+    <Transaction>2013/04/27 21:10:32.000.957,C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\resource.h=</Transaction>
+    <Transaction>2013/04/27 21:10:32.000.956,C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\felicaint.h=</Transaction>
+    <Transaction>2013/04/27 21:10:41.000.316,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\resource.h</Transaction>
+    <Transaction>2013/04/27 21:10:41.000.311,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\felicaint.h</Transaction>
+    <Transaction>2013/04/27 21:17:27.000.239,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\felicalib.h</Transaction>
+    <Transaction>2013/04/27 21:31:59.000.718,=C:\Users\Yuhi\Documents\GitHub\felicaStudentIDReader\felicaStudentIDReaderforWin\felicalib.c</Transaction>
+    <Transaction>2013/04/27 21:36:48.000.368,=C:\Users\Yuhi\Documents\GitHub\felicalib\felicalib.c</Transaction>
+    <Transaction>2013/04/27 21:37:01.000.039,=C:\Users\Yuhi\Documents\GitHub\felicalib\felicalib.h</Transaction>
+    <Transaction>2013/04/27 21:37:01.000.034,=C:\Users\Yuhi\Documents\GitHub\felicalib\felicaint.h</Transaction>
+    <Transaction>2013/04/27 21:37:01.000.043,=C:\Users\Yuhi\Documents\GitHub\felicalib\resource.h</Transaction>
   </Transactions>
 </BorlandProject>
