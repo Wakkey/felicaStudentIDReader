@@ -22,11 +22,17 @@ __published:	// IDE で管理されるコンポーネント
 	TTimer *Timer1;
 	TLabel *Label1;
 	TLabel *Label2;
-	TStringGrid *StringGrid1;
 	TButton *Button1;
 	TButton *Button2;
 	TEdit *Edit1;
 	TLabel *Label3;
+	TPanel *Panel1;
+	TPanel *Panel2;
+	TStringGrid *StringGrid1;
+	TPanel *Panel3;
+	TStringGrid *StringGrid2;
+	TPanel *Panel4;
+	TPanel *Panel5;
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
 	void __fastcall FormCreate(TObject *Sender);

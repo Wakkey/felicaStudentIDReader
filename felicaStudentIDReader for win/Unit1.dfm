@@ -52,24 +52,13 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
-  object StringGrid1: TStringGrid
-    Left = 0
-    Top = 200
-    Width = 652
-    Height = 219
-    Align = alBottom
-    ColCount = 7
-    RowCount = 1
-    FixedRows = 0
-    TabOrder = 0
-  end
   object Button1: TButton
     Left = 419
     Top = 8
     Width = 75
     Height = 25
     Caption = 'Button1'
-    TabOrder = 1
+    TabOrder = 0
     Visible = False
     OnClick = Button1Click
   end
@@ -79,7 +68,7 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Button2'
-    TabOrder = 2
+    TabOrder = 1
     Visible = False
     OnClick = Button2Click
   end
@@ -88,9 +77,82 @@ object Form1: TForm1
     Top = 8
     Width = 121
     Height = 21
-    TabOrder = 3
+    TabOrder = 2
     Text = 'Edit1'
     Visible = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 190
+    Width = 652
+    Height = 229
+    Align = alBottom
+    Caption = 'Panel1'
+    TabOrder = 3
+    object Panel2: TPanel
+      Left = 200
+      Top = 1
+      Width = 451
+      Height = 227
+      Align = alRight
+      Caption = 'Panel2'
+      TabOrder = 0
+      object StringGrid1: TStringGrid
+        Left = 1
+        Top = 32
+        Width = 449
+        Height = 194
+        Align = alBottom
+        ColCount = 7
+        RowCount = 1
+        FixedRows = 0
+        TabOrder = 0
+      end
+      object Panel5: TPanel
+        Left = 1
+        Top = 1
+        Width = 449
+        Height = 31
+        Align = alClient
+        Caption = #20986#24109#32773#19968#35239
+        TabOrder = 1
+        ExplicitLeft = 5
+        ExplicitTop = -5
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Top = 1
+      Width = 199
+      Height = 227
+      Align = alClient
+      Caption = 'Panel3'
+      TabOrder = 1
+      ExplicitLeft = -4
+      ExplicitTop = 0
+      ExplicitWidth = 247
+      object StringGrid2: TStringGrid
+        Left = 1
+        Top = 32
+        Width = 197
+        Height = 194
+        Align = alBottom
+        ColCount = 3
+        RowCount = 1
+        FixedRows = 0
+        TabOrder = 0
+      end
+      object Panel4: TPanel
+        Left = 1
+        Top = 1
+        Width = 197
+        Height = 31
+        Align = alClient
+        Caption = #23398#29983#21517#31807
+        TabOrder = 1
+        ExplicitHeight = 24
+      end
+    end
   end
   object Timer1: TTimer
     Interval = 500
