@@ -85,46 +85,35 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	   }
 	 }
    }
-    s3 = "";
-	   Form1->Label3->Caption = "";
 	Form1->Label2->Caption = s;
-	bool hitsw = false;
-	for (int i = 0; i < Form1->StringGrid2->RowCount; i++) {
-	if ( s.Length() > 0 ){
+	i3 = Form1->StringGrid1->Cols[2]->IndexOf( s );
+	if ( -1 != i3 ) {
+	  s3 = Form1->StringGrid1->Cells[3][i3];
+	} else {
 
-	  if ( Form1->StringGrid2->Cells[1][i] == ( s ) ) {
-		s3 = Form1->StringGrid2->Cells[2][i];
-		Caption = s3;
-		Form1->Label3->Caption = s3;
-		hitsw = true;
-		break;
-	  } else {
-		s3 = "–¢“o˜^‚Å‚·";
-		Form1->Label3->Caption = s3;
-		hitsw = false;
-	  }
+	  Form1->Label3->Caption = s3;
 	}
-	}
-
    if (sw == true) {
 
 	 s = Form1->Label2->Caption;
 	 if (7== s.Length()){
 
-
+	   s3 = "–¢“o˜^‚Å‚·";
 	   i1 = Form1->StringGrid1->Cols[2]->IndexOf(s);
 	   if ( -1 == i1 ) {
 		 Form1->StringGrid1->RowCount = Form1->StringGrid1->RowCount + 1;
 		 i = Form1->StringGrid1->RowCount -1;
 		 Form1->StringGrid1->Cells[2][i] = Form1->Label2->Caption;
-		 if ( hitsw ) {
-           Form1->StringGrid1->Cells[1][i] = "oÈ";
-		 } else {
-		   Form1->StringGrid1->Cells[1][i] = "–¢—šCoÈ";
-		 }
+         Form1->StringGrid1->Cells[1][i] = "–¢—šCoÈ";
 		 writedate(i);
 
 		 Form1->Label3->Caption =  s3;
+	   } else {
+		 Form1->StringGrid1->Cells[1][i] = "oÈ";
+		 writedate(i);
+
+		 //alist“ñ‚Â‚Å’u‚«Š·‚¦‚é
+		 Form1->Label3->Caption = s3;
 	   }
 	 }
    }
@@ -152,12 +141,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
   Form1->StringGrid1->Cells[4][0] = "oÈ“ú•t";
   Form1->StringGrid1->Cells[5][0] = "oÈŽžŠÔ";
   //Form1->StringGrid1->Cells[6][0] = "‘ÞÈŽžŠÔ";
-  TStringList* alist = new TStringList(this);
-  alist->LoadFromFile(ExtractFilePath( ParamStr(0) )  + "–¼•ë.csv");
-  for (int i=0; i < alist->Count ; i++) {
-   Form1->StringGrid2->Rows[i]->CommaText = alist->Strings[i];
-   Form1->StringGrid2->RowCount = Form1->StringGrid2->RowCount + 1;
-  }
+
 }
 //---------------------------------------------------------------------------
 
