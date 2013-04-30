@@ -104,8 +104,8 @@ void TForm1::writedate(int i){
   }
 
   Form1->StringGrid1->Cells[0][i] = i;
-  Form1->StringGrid1->Cells[4][i] = s1;
-  Form1->StringGrid1->Cells[5][i] = s2;
+  Form1->StringGrid1->Cells[5][i] = s1;
+  Form1->StringGrid1->Cells[6][i] = s2;
   MessageBeep(sounds[5].value);
   Button1Click(Form1->Button1);
 }
@@ -117,7 +117,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
    alist = new TStringList;
    alist->Clear();
    String s,s1,s2,s3;
-   int i,i1,i2,i3;
+   int i,i1,i2,i3,i4,i5;;
    bool sw = false;
    s1 = "abcdefghijklmnopqrstuwxyz1234567890";
    s = ret;
@@ -128,7 +128,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	   }
 	 }
    }
-    s3 = "";
+	s3 = "";
 	   Form1->Label3->Caption = "";
 	Form1->Label2->Caption = s;
 	bool hitsw = false;
@@ -136,10 +136,21 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	if ( s.Length() > 0 ){
 
 	  if ( Form1->StringGrid2->Cells[0][i] == ( s ) ) {
+
 		s3 = Form1->StringGrid2->Cells[1][i];
 		//Caption = s3;
 		Form1->Label3->Caption = s3;
-		Form1->StringGrid1->Cells[3][i] = s3;
+		Form1->StringGrid1->Cells[2][i] = s3;
+
+		i4 = Form1->StringGrid2->Cols[0]->IndexOf(s);
+        if ( i4 != -1 ) {
+		  i5 = Form1->StringGrid1->Cols[1]->IndexOf(s);
+		  if ( i5 != -1 ) {
+			Form1->StringGrid1->Cells[3][i5] = Form1->StringGrid2->Cells[2][i4];
+			Form1->StringGrid1->Cells[4][i5] = Form1->StringGrid2->Cells[3][i4];
+			//Caption = IntToStr(i4);
+		  }
+		}
 		hitsw = true;
 		break;
 	  } else {
@@ -157,15 +168,15 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	 if (7== s.Length()){
 
 
-	   i1 = Form1->StringGrid1->Cols[2]->IndexOf(s);
+	   i1 = Form1->StringGrid1->Cols[1]->IndexOf(s);
 	   if ( -1 == i1 ) {
 		 Form1->StringGrid1->RowCount = Form1->StringGrid1->RowCount + 1;
 		 i = Form1->StringGrid1->RowCount -1;
-		 Form1->StringGrid1->Cells[2][i] = Form1->Label2->Caption;
+		 Form1->StringGrid1->Cells[1][i] = Form1->Label2->Caption;
 		 if ( hitsw ) {
-           Form1->StringGrid1->Cells[1][i] = "正規履修";
+		   Form1->StringGrid1->Cells[2][i] = s3;
 		 } else {
-		   Form1->StringGrid1->Cells[1][i] = "未履修出席";
+		   Form1->StringGrid1->Cells[2][i] = "";
 		 }
 		 writedate(i);
 
@@ -191,12 +202,12 @@ void __fastcall TForm1::FormCloseQuery(TObject *Sender, bool &CanClose)
 
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
-  Form1->StringGrid1->Cells[1][0] = "出席可否";
-  Form1->StringGrid1->Cells[2][0] = "学籍番号";
-  Form1->StringGrid1->Cells[3][0] = "名前";
-  Form1->StringGrid1->Cells[4][0] = "出席日付";
-  Form1->StringGrid1->Cells[5][0] = "出席時間";
-  //Form1->StringGrid1->Cells[6][0] = "退席時間";
+  Form1->StringGrid1->Cells[1][0] = "学籍番号";
+  Form1->StringGrid1->Cells[2][0] = "名前";
+  Form1->StringGrid1->Cells[3][0] = "ふりがな";
+  Form1->StringGrid1->Cells[4][0] = "性別";
+  Form1->StringGrid1->Cells[5][0] = "出席日時";
+  Form1->StringGrid1->Cells[6][0] = "出席時限";
   TStringList* alist = new TStringList(this);
   alist->LoadFromFile(ExtractFilePath( ParamStr(0) )  + "students_sample.csv");
   for (int i=0; i < alist->Count ; i++) {
