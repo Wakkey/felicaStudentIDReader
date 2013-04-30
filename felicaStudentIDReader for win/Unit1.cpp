@@ -58,8 +58,51 @@ void TForm1::writedate(int i){
   TDateTime date = Date();
   TDateTime time = Time();
   String s1,s2;
+  String s3;
   s1 = DateTimeToStr(date);
   s2 = time.TimeString();
+  TDateTime letemagin = StrToDateTime("1:30:00");
+  TDateTime early_margin = StrToDateTime("0:10:00");
+  TDateTime set1,set2;
+
+  //‰½ŽžŒÀ–Ú‚©‚ð•Ô‚·
+
+
+	TDateTime academic_time[6];
+	s3 = "0:00:00";
+	academic_time[0] = StrToDateTime(s3);
+
+	s3 = "9:00:00";
+	academic_time[1] = StrToDateTime(s3);
+
+	s3 = "10:40:00";
+	academic_time[2] = StrToDateTime(s3);
+
+	s3 = "13:10:00";
+	academic_time[3] = StrToDateTime(s3);
+
+	s3 = "14:50:00";
+	academic_time[4] = StrToDateTime(s3);
+
+	s3 = "16:30:00";
+	academic_time[5] = StrToDateTime(s3);
+
+	s3 = "18:10:00";
+	academic_time[6] = StrToDateTime(s3);
+
+
+  for ( int i1 = 0; i1 < 7; i1++ ) {
+	set1 = ( academic_time[i1] + letemagin );
+	set2 = ( early_margin + time );
+	if ( set1 < set2 ) {
+	  s2 = IntToStr(i1) + "ŽžŒÀ–Ú";
+	  //ShowMessage(set1.TimeString() + " " + set2.TimeString());
+	}
+	if ( academic_time[6] < time ) {
+	  s2 = "0";
+	}
+  }
+
   Form1->StringGrid1->Cells[0][i] = i;
   Form1->StringGrid1->Cells[4][i] = s1;
   Form1->StringGrid1->Cells[5][i] = s2;
@@ -92,15 +135,17 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	for (int i = 0; i < Form1->StringGrid2->RowCount; i++) {
 	if ( s.Length() > 0 ){
 
-	  if ( Form1->StringGrid2->Cells[1][i] == ( s ) ) {
-		s3 = Form1->StringGrid2->Cells[2][i];
-		Caption = s3;
+	  if ( Form1->StringGrid2->Cells[0][i] == ( s ) ) {
+		s3 = Form1->StringGrid2->Cells[1][i];
+		//Caption = s3;
 		Form1->Label3->Caption = s3;
+		Form1->StringGrid1->Cells[3][i] = s3;
 		hitsw = true;
 		break;
 	  } else {
 		s3 = "–¢“o˜^‚Å‚·";
 		Form1->Label3->Caption = s3;
+		//Form1->StringGrid1->Cells[3][i] = s3;
 		hitsw = false;
 	  }
 	}
@@ -118,7 +163,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 		 i = Form1->StringGrid1->RowCount -1;
 		 Form1->StringGrid1->Cells[2][i] = Form1->Label2->Caption;
 		 if ( hitsw ) {
-           Form1->StringGrid1->Cells[1][i] = "oÈ";
+           Form1->StringGrid1->Cells[1][i] = "³‹K—šC";
 		 } else {
 		   Form1->StringGrid1->Cells[1][i] = "–¢—šCoÈ";
 		 }
@@ -153,7 +198,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
   Form1->StringGrid1->Cells[5][0] = "oÈŽžŠÔ";
   //Form1->StringGrid1->Cells[6][0] = "‘ÞÈŽžŠÔ";
   TStringList* alist = new TStringList(this);
-  alist->LoadFromFile(ExtractFilePath( ParamStr(0) )  + "–¼•ë.csv");
+  alist->LoadFromFile(ExtractFilePath( ParamStr(0) )  + "students_sample.csv");
   for (int i=0; i < alist->Count ; i++) {
    Form1->StringGrid2->Rows[i]->CommaText = alist->Strings[i];
    Form1->StringGrid2->RowCount = Form1->StringGrid2->RowCount + 1;

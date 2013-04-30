@@ -90,67 +90,72 @@ object Form1: TForm1
     Caption = 'Panel1'
     TabOrder = 3
     object Panel2: TPanel
-      Left = 200
+      Left = 265
       Top = 1
-      Width = 451
+      Width = 386
       Height = 227
-      Align = alRight
+      Align = alClient
       Caption = 'Panel2'
       TabOrder = 0
+      ExplicitLeft = 333
+      ExplicitTop = 2
+      ExplicitWidth = 323
       object StringGrid1: TStringGrid
         Left = 1
         Top = 32
-        Width = 449
+        Width = 384
         Height = 194
         Align = alBottom
-        ColCount = 7
+        ColCount = 6
         RowCount = 1
         FixedRows = 0
         TabOrder = 0
+        ExplicitLeft = 5
+        ExplicitTop = 38
+        ExplicitWidth = 321
       end
       object Panel5: TPanel
         Left = 1
         Top = 1
-        Width = 449
+        Width = 384
         Height = 31
         Align = alClient
         Caption = #20986#24109#32773#19968#35239
         TabOrder = 1
-        ExplicitLeft = 5
-        ExplicitTop = -5
+        ExplicitWidth = 449
       end
     end
     object Panel3: TPanel
       Left = 1
       Top = 1
-      Width = 199
+      Width = 264
       Height = 227
-      Align = alClient
+      Align = alLeft
       Caption = 'Panel3'
       TabOrder = 1
-      ExplicitLeft = -4
-      ExplicitTop = 0
-      ExplicitWidth = 247
       object StringGrid2: TStringGrid
         Left = 1
         Top = 32
-        Width = 197
+        Width = 262
         Height = 194
         Align = alBottom
-        ColCount = 3
+        ColCount = 4
         RowCount = 1
         FixedRows = 0
         TabOrder = 0
+        ExplicitWidth = 325
+        RowHeights = (
+          24)
       end
       object Panel4: TPanel
         Left = 1
         Top = 1
-        Width = 197
+        Width = 262
         Height = 31
         Align = alClient
         Caption = #23398#29983#21517#31807
         TabOrder = 1
-        ExplicitHeight = 24
+        ExplicitWidth = 197
       end
     end
   end
