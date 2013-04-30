@@ -20,12 +20,7 @@ class TForm1 : public TForm
 {
 __published:	// IDE で管理されるコンポーネント
 	TTimer *Timer1;
-	TLabel *Label1;
 	TLabel *Label2;
-	TButton *Button1;
-	TButton *Button2;
-	TEdit *Edit1;
-	TLabel *Label3;
 	TPanel *Panel1;
 	TPanel *Panel2;
 	TStringGrid *StringGrid1;
@@ -33,6 +28,13 @@ __published:	// IDE で管理されるコンポーネント
 	TStringGrid *StringGrid2;
 	TPanel *Panel4;
 	TPanel *Panel5;
+	TPanel *Panel6;
+	TLabel *Label3;
+	TLabel *Label1;
+	TEdit *Edit1;
+	TButton *Button1;
+	TButton *Button2;
+	TLabel *Label4;
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
 	void __fastcall FormCreate(TObject *Sender);

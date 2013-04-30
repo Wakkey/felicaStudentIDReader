@@ -101,6 +101,9 @@ void TForm1::writedate(int i){
 	if ( academic_time[6] < time ) {
 	  s2 = "0";
 	}
+	if ( i1 == 0 ) {
+      s2 = 0;
+	}
   }
 
   Form1->StringGrid1->Cells[0][i] = i;
