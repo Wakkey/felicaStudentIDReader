@@ -15,18 +15,6 @@ object Form1: TForm1
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Label2: TLabel
-    Left = 318
-    Top = 24
-    Width = 20
-    Height = 77
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -64
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object Panel1: TPanel
     Left = 0
     Top = 188
@@ -35,8 +23,6 @@ object Form1: TForm1
     Align = alClient
     Caption = 'Panel1'
     TabOrder = 0
-    ExplicitTop = 190
-    ExplicitWidth = 652
     object Panel2: TPanel
       Left = 265
       Top = 1
@@ -46,7 +32,6 @@ object Form1: TForm1
       Caption = 'Panel2'
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 386
       object StringGrid1: TStringGrid
         Left = 1
         Top = 32
@@ -57,8 +42,6 @@ object Form1: TForm1
         RowCount = 1
         FixedRows = 0
         TabOrder = 0
-        ExplicitLeft = 5
-        ExplicitTop = 38
       end
       object Panel5: TPanel
         Left = 1
@@ -68,7 +51,6 @@ object Form1: TForm1
         Align = alTop
         Caption = #20986#24109#32773#19968#35239
         TabOrder = 1
-        ExplicitWidth = 384
       end
     end
     object Panel3: TPanel
@@ -90,8 +72,6 @@ object Form1: TForm1
         RowCount = 1
         FixedRows = 0
         TabOrder = 0
-        ExplicitLeft = -3
-        ExplicitTop = 38
         RowHeights = (
           24)
       end
@@ -104,8 +84,6 @@ object Form1: TForm1
         Caption = #23398#29983#21517#31807
         ParentBackground = False
         TabOrder = 1
-        ExplicitLeft = -3
-        ExplicitTop = -1
       end
     end
   end
@@ -151,6 +129,18 @@ object Form1: TForm1
       Width = 160
       Height = 77
       Caption = #21517#21069#65306
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -64
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 318
+      Top = 24
+      Width = 20
+      Height = 77
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -64

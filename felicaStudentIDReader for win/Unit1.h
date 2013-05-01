@@ -20,7 +20,6 @@ class TForm1 : public TForm
 {
 __published:	// IDE で管理されるコンポーネント
 	TTimer *Timer1;
-	TLabel *Label2;
 	TPanel *Panel1;
 	TPanel *Panel2;
 	TStringGrid *StringGrid1;
@@ -35,6 +34,7 @@ __published:	// IDE で管理されるコンポーネント
 	TButton *Button1;
 	TButton *Button2;
 	TLabel *Label4;
+	TLabel *Label2;
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
 	void __fastcall FormCreate(TObject *Sender);

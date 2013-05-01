@@ -36,22 +36,51 @@ __declspec(dllexport) char* __stdcall ReadStudentID(){
 	felica *f;
 	char str[93]; //学籍番号格納
 	uint8 data[16]; //readしたデータの受け口
+	char s[11] = "0123456789";
 
-	p = pasori_open(NULL);
-	if (!p) return false;
+	p = pasori_open( NULL );
+	if ( !p ) {
+	  return false;
+	}
 
-	pasori_init(p); //pasoriの初期化
+	pasori_init( p ); //pasoriの初期化
 
-	f = felica_polling(p, SYSTEM_CODE, 0, 0) ;
-	if (!f) return false;
+	f = felica_polling
+		  (
+		   p,
+		   SYSTEM_CODE,
+		   0,
+		   0
+		  );
 
-	felica_read_without_encryption02(f,SERVICE_CODE,0,STUDENT_ID_BLOCK_NUM,data);
+	if ( !f ) {
+	  return false;
+	}
 
-	for(int i =2;i<9;i++)sprintf(&str[i-2],"%c",data[i]); //ASCII変換
-	sprintf(&str[7],"%c",NULL);
+	felica_read_without_encryption02
+	  (
+	   f,
+	   SERVICE_CODE,
+	   0,
+	   STUDENT_ID_BLOCK_NUM,
+	   data
+	   );
 
-	felica_free(f);
-	return str;
+	for( int i =2; i < 9; i++ ) {
+	  sprintf( &str[i-2], "%c", data[i] ); //ASCII変換
+	}
+
+	sprintf( &str[7], "%c", NULL);
+
+	//データ検証
+	for ( int i = 0; i < 10; i++ ) {
+	  if ( str[6] == s[i] ) {
+	    return str;
+	  }
+	}
+
+	felica_free( f );
+
 }
 
 void TForm1::writedate(int i){
@@ -260,6 +289,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
   Form1->Edit1->Text = s + c + s1;
 }
 //---------------------------------------------------------------------------
+
 
 
 
