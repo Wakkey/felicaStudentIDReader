@@ -86,14 +86,13 @@ __declspec(dllexport) char* __stdcall ReadStudentID(){
 void TForm1::writedate(int i){
   TDateTime date = Date();
   TDateTime time = Time();
+  String s1,s2;
+  String s3;
+  s1 = DateTimeToStr(date);
+  s2 = time.TimeString();
   TDateTime letemagin = StrToDateTime("1:30:00");
   TDateTime early_margin = StrToDateTime("0:10:00");
   TDateTime set1,set2;
-  String s1,s2,s3,s4;
-  s1 = DateTimeToStr(date);
-  s2 = time.TimeString();
-  s4 = time.TimeString();
-
 
   //‰½ŽžŒÀ–Ú‚©‚ð•Ô‚·
 
@@ -124,24 +123,21 @@ void TForm1::writedate(int i){
   for ( int i1 = 0; i1 < 7; i1++ ) {
 	set1 = ( academic_time[i1] + letemagin );
 	set2 = ( early_margin + time );
-	if ( set1 > set2 ) {
-	  //if ( set1 < time ) {
-		s2 = IntToStr(i1) + "ŽžŒÀ–Ú";
-		break;
-		//ShowMessage(set1.TimeString() + " " + set2.TimeString());
-	  //}
+	if ( set1 < set2 ) {
+	  s2 = IntToStr(i1) + "ŽžŒÀ–Ú";
+	  //ShowMessage(set1.TimeString() + " " + set2.TimeString());
 	}
-	s2 = "0";
-	if ( i1 == 0 ) {
+	if ( academic_time[6] < time ) {
 	  s2 = "0";
+	}
+	if ( i1 == 0 ) {
+      s2 = 0;
 	}
   }
 
   Form1->StringGrid1->Cells[0][i] = i;
   Form1->StringGrid1->Cells[5][i] = s1;
   Form1->StringGrid1->Cells[6][i] = s2;
-  Form1->StringGrid1->Cells[7][i] = s4;
-
   MessageBeep(sounds[5].value);
   Button1Click(Form1->Button1);
 }
@@ -244,8 +240,6 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
   Form1->StringGrid1->Cells[4][0] = "«•Ê";
   Form1->StringGrid1->Cells[5][0] = "oÈ“úŽž";
   Form1->StringGrid1->Cells[6][0] = "oÈŽžŒÀ";
-  Form1->StringGrid1->Cells[7][0] = "oÈŽžŠÔ";
-
   TStringList* alist = new TStringList(this);
   alist->LoadFromFile(ExtractFilePath( ParamStr(0) )  + "students_sample.csv");
   for (int i=0; i < alist->Count ; i++) {

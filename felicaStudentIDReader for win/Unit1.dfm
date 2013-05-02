@@ -38,7 +38,7 @@ object Form1: TForm1
         Width = 460
         Height = 194
         Align = alClient
-        ColCount = 8
+        ColCount = 7
         RowCount = 1
         FixedRows = 0
         TabOrder = 0
@@ -96,6 +96,8 @@ object Form1: TForm1
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
+    ExplicitLeft = 1
+    ExplicitTop = -4
     object Label3: TLabel
       Left = 318
       Top = 105
